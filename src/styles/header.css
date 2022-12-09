@@ -1,0 +1,22 @@
+nav{
+    background-color: #020203;
+    display: flex;
+}
+
+.Header-img{
+    width: 20%;
+    margin-left: 2%;
+    margin-right: auto;
+}
+
+.Header{
+    display: flex;
+    color: white;
+    font-size: 190%;
+    width: 74%;
+    flex-wrap: wrap;
+}
+
+.Header p{
+    padding-right: 10%;
+}

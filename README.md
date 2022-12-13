@@ -21,9 +21,9 @@ Regarding the data, I created a backend using NodeJS that you can find [here](ht
 
 
 ## Technologies
-- (https://forthebadge.com/images/badges/made-with-javascript.svg)]
-- (https://forthebadge.com/images/badges/uses-css.svg)]
-- (https://forthebadge.com/images/badges/uses-html.svg)]
+- [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+- [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
+- [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
 - React
 - React Router
 - Recharts

@@ -1,35 +1,35 @@
 import { useEffect, useState } from 'react'
+import { useParams } from "react-router-dom";
 
 function ComponentDidMount() {
 
-    const [data, setData] = useState(null);
-
+    const [data, setPosts] = useState(null);
+    const { userId } = useParams();
     useEffect(() => {
-        // GET request using fetch inside useEffect React hook
-        fetch('http://localhost:3000/user/12')
-        .then((response) => response.json())
-        .then((actualData) => {
-            setData(actualData);
-          })
-  
-    }, []);
+        fetch(`http://localhost:3000/user/${userId}`)
+           .then((response) => response.json())
+           .then((data) => {
+              console.log(data);
+              setPosts(data);
+           })
+           .catch((err) => {
+              console.log(err.message);
+           });
+     }, [userId]);
     console.log(data)
-    // return (
-    //     <div className="card text-center m-3">
-    //         <ul className='logement-list'>
-    //             {data.map(({id, userInfos}) =>
-               
-    //                 <div className='card' key={id}>
-    //                     <p className="titre">{userInfos}</p>
-    //                 </div>
-                 
-    //             )}
-    //         </ul>
-    //     </div>
-    // )
+    return data !== null?  (
+        <div className="posts-container">
+           {Object.values(data).map((post) => {
+              return (
+                 <div className="post-card" key={post.id}>
+                    <div className="button">
+                    <div className="delete-btn">{post.userInfos.firstName}</div>
+                    </div>
+                 </div>
+              );
+           })}
+        </div>
+        ):<></>
 }
 
 export default ComponentDidMount
-
-
-

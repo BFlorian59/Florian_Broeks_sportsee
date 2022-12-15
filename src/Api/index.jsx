@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
+import User from '../component/User'
 
 function ComponentDidMount() {
 
@@ -16,20 +17,16 @@ function ComponentDidMount() {
               console.log(err.message);
            });
      }, [userId]);
-    console.log(data)
     return data !== null?  (
-        <div className="posts-container">
-           {Object.values(data).map((post) => {
-              return (
-                 <div className="post-card" key={post.id}>
-                    <div className="button">
-                    <div className="delete-btn">{post.userInfos.firstName}</div>
-                    </div>
-                 </div>
-              );
-           })}
-        </div>
-        ):<></>
+      <div className="posts-container">
+         {Object.values(data).map((user) => 
+            <div className='titre' key={user.id}>
+               <User lastname={user.userInfos.lastName} firstname={user.userInfos.firstName} calorieCount={user.keyData.calorieCount} proteinCount={user.keyData.proteinCount}
+               carbohydrateCount={user.keyData.carbohydrateCount}  lipidCount={user.keyData.lipidCount} />
+            </div>      
+         )}
+      </div>
+   ):<></>
 }
 
 export default ComponentDidMount

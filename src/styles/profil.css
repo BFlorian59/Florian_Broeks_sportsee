@@ -8,3 +8,37 @@ body, html, #root{
   display: flex;
   height: 100%;
 }
+
+.firstname{
+  color: #FF0101;
+  padding-left: 5%;
+}
+
+.Userinfo{
+  display: flex;
+  font-size: 150%;
+
+}
+
+.posts-container{
+  margin-top: 3%;
+  margin-left: 10%;
+}
+
+.titre p{
+  font-size: 150%;
+}
+
+.stat{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.keyData img{
+  width: 34%;
+  margin-bottom: 46%;
+}
+
+.calories, .proteines, .gluicides, .lipides{
+  display: flex;
+}

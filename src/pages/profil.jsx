@@ -1,12 +1,13 @@
 import '../styles/profil.css'
 import Nav from '../component/Nav_vertical';
-import Profile from '../Api'
+import ComponentDidMount  from '../Api'
+import '../styles/profil.css'
 
 function Profil() {
   return (
     <div className='contenu'>
-        <Nav />
-        <Profile />    
+      <Nav />
+      <ComponentDidMount />      
     </div>
   )
 }

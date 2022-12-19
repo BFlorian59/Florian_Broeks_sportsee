@@ -10,7 +10,6 @@ function Activity({activity}) {
                 height={320}
                 data={activity}
             >
-                <title>egrg</title>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="day" />
                 <YAxis />

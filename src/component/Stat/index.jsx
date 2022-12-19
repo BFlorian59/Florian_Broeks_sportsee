@@ -28,8 +28,10 @@ function Stat({calorieCount, carbohydrateCount, lipidCount, proteinCount}) {
 }
 
 Stat.propTypes = {
-    lastname: PropTypes.string,
-    firstname: PropTypes.string,
+    calorieCount: PropTypes.number,
+    carbohydrateCount: PropTypes.number,
+    lipidCount: PropTypes.number,
+    proteinCount: PropTypes.number,
 }
 
 export default Stat

@@ -1,3 +1,19 @@
 .activity{
     margin-right: 5%;
 }
+
+.graph{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.performance{
+    background-color: #282D30;
+    width: 258px;
+    height: 263px;
+}
+.performance svg{
+    width: 63%;
+    height: 137%;
+}

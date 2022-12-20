@@ -1,19 +1,12 @@
-import { useEffect, useState } from 'react'
-import { useParams } from "react-router-dom";
-import User from '../component/User'
-import Stat from '../component/Stat'
-import Activity from '../component/Activity'
-import Session from '../component/Sessions'
-import Performance from '../component/Performance'
-import Score from '../component/Score'
-import user from '../mock'
+import user from '../mock/user18/user'
+import user_18_sessions from '../mock/user18/session'
 import '../styles/activity.css'
 import env from '../.env'
 
 
 
 
-export class ComponentDidMount {
+export default class ComponentDidMount {
 
    constructor(){
       this.env = true;
@@ -22,6 +15,7 @@ export class ComponentDidMount {
    getuserID(userId){
 
       if (env) {
+         console.log(user)
          return user
       }else{
          fetch(`http://localhost:3000/user/${userId}`)
@@ -53,6 +47,43 @@ export class ComponentDidMount {
            });
       }  
    }
+
+   getuserSession(userId){
+
+      if (env) {
+         console.log(user_18_sessions)
+         return user_18_sessions
+      }else{
+         fetch(`http://localhost:3000/user/${userId}/average-sessions`)
+           .then((response) => response.json())
+           .then((session) => {
+              console.log(session);
+              return session;
+           })
+           .catch((err) => {
+              console.log(err.message);
+           });
+      }  
+   }
+
+      getuserPerformance(userId){
+
+      if (env) {
+         
+      }else{
+         fetch(`http://localhost:3000/user/${userId}/performance`)
+           .then((response) => response.json())
+           .then((performance) => {
+              console.log(performance);
+              return performance;
+           })
+           .catch((err) => {
+              console.log(err.message);
+           });
+      }  
+   }
+
+
 
 
 

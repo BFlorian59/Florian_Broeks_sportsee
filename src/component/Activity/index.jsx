@@ -2,7 +2,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'rech
 import '../../styles/activity.css'
 
 function Activity({activity}) {
-  
+    
       return (
         <div className='activity'>
             <BarChart

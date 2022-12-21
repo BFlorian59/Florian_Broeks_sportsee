@@ -9,10 +9,11 @@ function Activity({activity}) {
                 width={835}
                 height={320}
                 data={activity}
+                barSize={10}
             >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="day" />
-                <YAxis />
+                <XAxis dataKey="day"  />
+                <YAxis orientation='right' />
                 <Tooltip />
                 <Legend verticalAlign="top"  align="right"/>
                 <Bar name="Poids (kg)" dataKey="kilogram" fill="#282D30"/>

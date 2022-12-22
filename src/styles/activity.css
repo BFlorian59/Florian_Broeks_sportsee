@@ -1,5 +1,8 @@
 .activity{
     margin-right: 5%;
+    background-color: #FBFBFB;
+    margin-bottom: 5%;
+    padding: 2%;
 }
 
 .graph{
@@ -31,5 +34,9 @@
 
 .score{
     background-color: #FBFBFB;
+}
+
+.custom-tooltip-activity .poids{
+    padding-bottom: 45%;
 }
 

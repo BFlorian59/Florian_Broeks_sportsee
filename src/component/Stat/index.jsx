@@ -9,19 +9,32 @@ function Stat({calorieCount, carbohydrateCount, lipidCount, proteinCount}) {
         <div className='keyData'>
             <div className='calories'>
                 <img src={calories} alt='calories'></img>
-                <p> {calorieCount}KCal calories</p>
+                <div className='text'>
+                    <h2> {calorieCount}KCal</h2>
+                    <p>calories</p>
+                </div>
+                
             </div>
             <div className='proteines'>
                 <img src={proteines} alt='proteines'></img>
-                <p> {proteinCount}g proteines</p>
+                <div className='text'>
+                    <h2> {proteinCount}g </h2>
+                    <p>proteines</p>
+                </div>
             </div>
             <div className='gluicides'>
                 <img src={carbs} alt=''></img>
-                <p> {carbohydrateCount}g carbs</p>
+                <div className='text'>
+                    <h2>{carbohydrateCount}g</h2>
+                    <p>gluicides</p>
+                </div>
             </div>
             <div className='lipides'>
                 <img src={fat} alt=''></img>
-                <p> {lipidCount}g lipides</p>
+                <div className='text'>
+                    <h2> {lipidCount}g</h2>
+                    <p>lipides</p>
+                </div>
             </div>
         </div> 
 	)    

@@ -1,7 +1,7 @@
 body, html, #root{
   margin: 0%;
   width: 100%;
-  height: 110%;
+  height: 119%;
 }
 
 .contenu{
@@ -35,10 +35,25 @@ body, html, #root{
 }
 
 .keyData img{
-  width: 34%;
-  margin-bottom: 46%;
+  width: 29%;
+  margin-left: 9%;
 }
 
 .calories, .proteines, .gluicides, .lipides{
   display: flex;
+  height: 63%;
+  align-items: center;
+  background-color: #FBFBFB;
+  margin-bottom: 57%;
+  width: 100%;
+}
+
+.keyData{
+  margin-right: 6%;
+  height: 100%;
+  width: 31%;
+}
+
+.text{
+  margin-left: 12%;
 }

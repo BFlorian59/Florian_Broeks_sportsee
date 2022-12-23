@@ -25,21 +25,21 @@ function App() {
   }, [userId]);
 
   useEffect(() => {
-    const user_18_activity = new ComponentDidMount()
-    user_18_activity.getuserActivity(userId)
-    setActivity(user_18_activity.getuserActivity(userId))
+    const activity = new ComponentDidMount()
+    activity.getuserActivity(userId)
+    setActivity(activity.getuserActivity(userId))
   }, [userId]);
 
   useEffect(() => {
-    const user_18_sessions = new ComponentDidMount()
-    user_18_sessions.getuserSession(userId)
-    setSession(user_18_sessions.getuserSession(userId))
+    const sessions = new ComponentDidMount()
+    sessions.getuserSession(userId)
+    setSession(sessions.getuserSession(userId))
   }, [userId]);
 
   useEffect(() => {
-    const user_18_performance = new ComponentDidMount()
-    user_18_performance.getuserPerformance(userId)
-    setPerformance(user_18_performance.getuserPerformance(userId))
+    const performance = new ComponentDidMount()
+    performance.getuserPerformance(userId)
+    setPerformance(performance.getuserPerformance(userId))
   }, [userId]);
 
    return data && activity && session && performance !== null?  (

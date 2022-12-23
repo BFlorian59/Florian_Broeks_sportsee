@@ -1,8 +1,13 @@
 .activity{
     margin-right: 5%;
     background-color: #FBFBFB;
-    margin-bottom: 5%;
+    margin-bottom: -3%;
     padding: 2%;
+    height: 41%;
+}
+
+.activity .recharts-default-legend{
+    margin-top: -4% !important;
 }
 
 .graph{
@@ -14,12 +19,12 @@
 .performance{
     background-color: #282D30;
     width: 264px;
-    height: 263px;
+    height: 314px;
     margin-right: 3%;
 }
 .performance svg{
     width: 100%;
-    height: 100%;
+    height: 125%;
 }
 
 .session svg{
@@ -30,6 +35,16 @@
 .session {
     background-color: #FF0000;
     margin-right: 3%;
+    width: 264px;
+    height: 314px;
+}
+
+.session .titre {
+    color: #FFFFFF;
+    opacity: 0.5;
+    width: 50%;
+    margin-left: 20%;
+    margin-bottom: 0%;
 }
 
 .score{

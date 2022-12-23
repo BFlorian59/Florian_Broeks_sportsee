@@ -29,7 +29,7 @@ function Activity({activity}) {
                 <XAxis/>
                 <YAxis orientation='right' />
                 <Tooltip wrapperStyle={{left:'2%', backgroundColor:'#E60000', color:"white", textAlign:'center', fontSize:'60%', padding: '1% 1%'}} content={<CustomTooltip />}/>
-                <Legend  iconType='circle' iconSize='10' verticalAlign="top"  align="right"/>
+                <Legend margin={{top:-37, right:-37, bottom:-37, left:-37}}  iconType='circle' iconSize='10' verticalAlign="top"  align="right"/>
                 <Bar name="Poids (kg)" dataKey="kilogram" fill="#282D30"/>
                 <Bar name="Calories brûlées (kCal)" dataKey="calories" fill="#E60000" />
                 <text

@@ -27,7 +27,7 @@ SportSee, a startup dedicated to sports coaching. In full growth, the company wi
 - React
 - React Router
 - Recharts
-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Contribute to the project
 

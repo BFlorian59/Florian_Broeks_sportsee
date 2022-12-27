@@ -1,3 +1,9 @@
+/**
+ * Represents a Activity of the User.
+ * @param {array} activity - The activity graph of the user.
+ */
+
+
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import '../../styles/activity.css'
 import PropTypes from 'prop-types';

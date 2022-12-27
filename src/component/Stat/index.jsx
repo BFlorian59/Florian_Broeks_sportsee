@@ -1,3 +1,11 @@
+/**
+ * Represents a stat of the User.
+ * @param {number} calorieCount - The count of the calorie of the user.
+ * @param {number} carbohydrateCount - The count of the carbohydrate of the user.
+ * @param {number} carbohydrateCount - The count of the lipid of the user.
+ * @param {number} carbohydrateCount - The count of the protein of the user.
+ */
+
 import PropTypes from 'prop-types';
 import calories from '../../assets/calories-icon.png'
 import proteines from '../../assets/protein-icon.png'

@@ -1,3 +1,8 @@
+/**
+ * Represents a score of the User.
+ * @param {object} score - The score graph of the user.
+ */
+
 import { RadialBarChart, RadialBar, PolarAngleAxis} from 'recharts';
 import PropTypes from 'prop-types';
 

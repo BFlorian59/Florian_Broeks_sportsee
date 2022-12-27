@@ -1,3 +1,8 @@
+/**
+ * Represents a session of the User.
+ * @param {object} session - The session graph of the user.
+ */
+
 import { AreaChart,  XAxis, Tooltip, Area} from 'recharts';
 import PropTypes from 'prop-types';
 

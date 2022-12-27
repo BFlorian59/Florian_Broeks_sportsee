@@ -1,3 +1,8 @@
+/**
+ * Represents a Performance of the User.
+ * @param {array} performance - The Performance graph of the user.
+ */
+
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis} from 'recharts';
 import PropTypes from 'prop-types';
 

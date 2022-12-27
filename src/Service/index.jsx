@@ -24,6 +24,8 @@ import user_12_performance from '../mock/user12/performance'
 import '../styles/activity.css'
 import env from '../.env'
 
+
+//get data
 export default class ComponentDidMount {
 
    constructor(){

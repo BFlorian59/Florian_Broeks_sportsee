@@ -1,3 +1,8 @@
+/**
+ * Represents a User.
+ * @param {string} firstname - The firstname of the user.
+ */
+
 import PropTypes from 'prop-types';
 
 //display user's firstname 

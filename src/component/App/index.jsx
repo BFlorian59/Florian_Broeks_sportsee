@@ -9,10 +9,12 @@ import Session from '../Sessions'
 import Score from '../Score'
 import Performance from '../Performance'
 
+
+//get data by user id
 function App() {
 
   const {userId} = useParams()
-  const [data, setUsers] = useState(null)
+  const [user, setUsers] = useState(null)
   const [activity, setActivity] = useState(null)
   const [session, setSession] = useState(null)
   const [performance, setPerformance] = useState(null)
@@ -22,35 +24,30 @@ function App() {
      const user = new ComponentDidMount()
       user.getuserID(userId)
       setUsers(user.getuserID(userId))
+
+      const activity = new ComponentDidMount()
+      activity.getuserActivity(userId)
+      setActivity(activity.getuserActivity(userId))
+
+      const sessions = new ComponentDidMount()
+      sessions.getuserSession(userId)
+      setSession(sessions.getuserSession(userId))
+
+      const performance = new ComponentDidMount()
+      performance.getuserPerformance(userId)
+      setPerformance(performance.getuserPerformance(userId))
   }, [userId]);
 
-  useEffect(() => {
-    const activity = new ComponentDidMount()
-    activity.getuserActivity(userId)
-    setActivity(activity.getuserActivity(userId))
-  }, [userId]);
 
-  useEffect(() => {
-    const sessions = new ComponentDidMount()
-    sessions.getuserSession(userId)
-    setSession(sessions.getuserSession(userId))
-  }, [userId]);
-
-  useEffect(() => {
-    const performance = new ComponentDidMount()
-    performance.getuserPerformance(userId)
-    setPerformance(performance.getuserPerformance(userId))
-  }, [userId]);
-
-   return data && activity && session && performance !== null?  (
+   return user && activity && session && performance !== null?  (
       <div className="posts-container">
-         {Object.values(data).map((user) => 
-            <div className='titre' key={user.id}>
-               <User firstname={user.userInfos.firstName}/>
+         {Object.values(user).map((users) => 
+            <div className='titre' key={users.id}>
+               <User firstname={users.userInfos.firstName}/>
             </div>  
          )}
          <div className='stat' >
-            {Object.values(data).map((user) => 
+            {Object.values(user).map((user) => 
                <Stat key={user.id} calorieCount={user.keyData.calorieCount} proteinCount={user.keyData.proteinCount}
                   carbohydrateCount={user.keyData.carbohydrateCount}  lipidCount={user.keyData.lipidCount} />
                
@@ -68,7 +65,7 @@ function App() {
                   <Performance key={perf.userId} performance={perf.data} kind={perf.kind} />
                )}
 
-               {Object.values(data).map((score) => 
+               {Object.values(user).map((score) => 
                   <Score key={score.id} score={score} />
                )}
             </div> 

@@ -1,3 +1,18 @@
+/**
+* Allows to connect to a database
+*
+* @param userId id of the user in url
+* @param activity array of the activity of the user
+* @param session array of the session of the user
+* @param performance array of the performance of the user
+
+* @return data of the user
+* @author Florian
+* @version 1.0
+*/
+
+
+/* eslint-disable eqeqeq */
 import user from '../mock/user18/user'
 import user12 from '../mock/user12/user'
 import user_18_sessions from '../mock/user18/session'

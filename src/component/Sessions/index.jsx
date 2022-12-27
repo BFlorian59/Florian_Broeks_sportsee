@@ -1,5 +1,7 @@
 import { AreaChart,  XAxis, Tooltip, Area} from 'recharts';
+import PropTypes from 'prop-types';
 
+//display graphical session
 function Session({session}) {
 
   const CustomTooltip = ({payload}) => {
@@ -30,4 +32,9 @@ function Session({session}) {
     </div>
   );
 }
+
+Session.propTypes = {
+  payload: PropTypes.number,
+}
+
 export default Session

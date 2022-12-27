@@ -1,6 +1,8 @@
 import { RadialBarChart, RadialBar, PolarAngleAxis} from 'recharts';
+import PropTypes from 'prop-types';
 
 
+//display graphical score of the user
 function Score({score}) {
   return (
     <div className='score'>
@@ -41,5 +43,9 @@ function Score({score}) {
       </RadialBarChart>
     </div>
   );
+}
+
+Score.propTypes = {
+  score: PropTypes.object
 }
 export default Score

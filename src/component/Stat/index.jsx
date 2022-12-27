@@ -4,6 +4,8 @@ import proteines from '../../assets/protein-icon.png'
 import carbs from '../../assets/carbs-icon.png'
 import fat from '../../assets/fat-icon.png'
 
+
+//display calorie, carbohydrate, lipid, protein of the user
 function Stat({calorieCount, carbohydrateCount, lipidCount, proteinCount}) {
     return (    
         <div className='keyData'>

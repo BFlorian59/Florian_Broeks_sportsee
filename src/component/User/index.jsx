@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 
+//display user's firstname 
 function User({firstname}) {
     return (
         <div>
@@ -14,7 +15,6 @@ function User({firstname}) {
 }
 
 User.propTypes = {
-    lastname: PropTypes.string,
     firstname: PropTypes.string,
 }
 

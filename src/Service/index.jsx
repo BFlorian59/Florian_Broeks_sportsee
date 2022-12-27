@@ -22,7 +22,7 @@ import user_12_activity from '../mock/user12/activity'
 import user_18_performance from '../mock/user18/performance'
 import user_12_performance from '../mock/user12/performance'
 import '../styles/activity.css'
-import env from '../.env'
+
 
 
 //get data
@@ -33,7 +33,7 @@ export default class ComponentDidMount {
    }
 
    getuserID(userId){
-      if (env) {
+      if (this.env) {
          if (userId == 18) {
             console.log(user)
             return user
@@ -58,7 +58,7 @@ export default class ComponentDidMount {
 
    getuserActivity(userId){
 
-      if (env) {
+      if (this.env) {
          if (userId == 18) {
             console.log(user_18_activity)
             return user_18_activity
@@ -82,7 +82,7 @@ export default class ComponentDidMount {
 
    getuserSession(userId){
 
-      if (env) {
+      if (this.env) {
          if (userId == 18) {
             console.log(user_18_sessions)
             return user_18_sessions
@@ -106,7 +106,7 @@ export default class ComponentDidMount {
 
       getuserPerformance(userId){
 
-      if (env) {
+      if (this.env) {
          if (userId == 18) {
             console.log(user_18_performance)
             return user_18_performance

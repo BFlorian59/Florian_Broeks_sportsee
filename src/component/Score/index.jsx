@@ -11,6 +11,9 @@ import PropTypes from 'prop-types';
 function Score({score}) {
   return (
     <div className='score'>
+      <div>
+        <p>Score</p>
+      </div>
       <RadialBarChart width={263} height={264} data={[score]}
           innerRadius={250}
           barSize={10}
@@ -27,23 +30,22 @@ function Score({score}) {
         />
         
         <RadialBar
+        // Condition dataKey
           dataKey="score"
           background
           fill="#FF0101B2"
-          width="100%" height="100%" 
-          label={{ fill: '#666', position: 'outside'}}
-          cy={200}
-          cx={200}
         /> 
 
         <text
-          x={30 / 2}
-          y={33 / 2}
+          x={125}
+          y={100}
           textAnchor="middle"
           dominantBaseline="middle"
           className="progress-label"
+          width={2}
         >
-          Score
+          {score.score}
+          % de votre objectif
         </text>
       </RadialBarChart>
     </div>

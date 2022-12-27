@@ -21,21 +21,23 @@ function App() {
 
 
   useEffect(() => {
-     const user = new ComponentDidMount()
-      user.getuserID(userId)
-      setUsers(user.getuserID(userId))
+     
+   const service = new ComponentDidMount()
+   //const user = new ComponentDidMount()
+   //service.getuserID(userId)
+      setUsers(service.getuserID(userId))
 
-      const activity = new ComponentDidMount()
-      activity.getuserActivity(userId)
-      setActivity(activity.getuserActivity(userId))
+      //const activity = new ComponentDidMount()
+      //service.getuserActivity(userId)
+      setActivity(service.getuserActivity(userId))
 
-      const sessions = new ComponentDidMount()
-      sessions.getuserSession(userId)
-      setSession(sessions.getuserSession(userId))
+      //const sessions = new ComponentDidMount()
+      //service.getuserSession(userId)
+      setSession(service.getuserSession(userId))
 
-      const performance = new ComponentDidMount()
-      performance.getuserPerformance(userId)
-      setPerformance(performance.getuserPerformance(userId))
+      //const performance = new ComponentDidMount()
+      //service.getuserPerformance(userId)
+      setPerformance(service.getuserPerformance(userId))
   }, [userId]);
 
 

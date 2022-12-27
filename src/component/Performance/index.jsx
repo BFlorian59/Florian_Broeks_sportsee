@@ -11,7 +11,7 @@ function Performance({performance, kind}) {
   return (
     <div className='performance'>
       <RadarChart
-        width={730} 
+        width={278} 
         height={250}
         cx={125}
         data={performance}
@@ -19,6 +19,7 @@ function Performance({performance, kind}) {
       >
         <PolarGrid />
         <PolarAngleAxis dataKey='kind' label={kind}/>
+        {/* kind[kind] */}
         <Radar
           dataKey="value"
           stroke="#FF0101B2"

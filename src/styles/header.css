@@ -20,3 +20,14 @@ nav{
 .Header p{
     padding-right: 10%;
 }
+
+
+@media screen and (max-width: 1240px) {
+    .Header-img {
+        width: 22%;
+        margin-left: 2%;
+        margin-right: auto;
+        height: 100%;
+        margin: auto;
+    }
+}

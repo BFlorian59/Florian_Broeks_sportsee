@@ -8,6 +8,8 @@ import PropTypes from 'prop-types';
 
 //display graphical Performance of the user
 function Performance({performance, kind}) {
+  console.log({kind})
+  console.log({performance})
   return (
     <div className='performance'>
       <RadarChart
@@ -18,7 +20,7 @@ function Performance({performance, kind}) {
         text-align='center'
       >
         <PolarGrid />
-        <PolarAngleAxis dataKey='kind' label={kind}/>
+            <PolarAngleAxis dataKey="kind" data={kind} name={kind} key={kind} />
         {/* kind[kind] */}
         <Radar
           dataKey="value"
@@ -32,8 +34,7 @@ function Performance({performance, kind}) {
 }
 
 Performance.propTypes = {
-  performance: PropTypes.array,
-  kind: PropTypes.object
+  
 }
 
 export default Performance

@@ -56,3 +56,69 @@
     padding-bottom: 45%;
 }
 
+@media screen and (max-width: 1240px) {
+   .activity .recharts-surface{
+        width: 100%;
+   }
+   .activity .recharts-wrapper{
+    width: 100% !important;
+   }
+
+   .activity {
+    margin-bottom: 5%;
+    height: 47%;
+   }
+   .session .recharts-wrapper{
+        width: 100% !important;
+        height: 86% !important;
+   }
+   .session{
+    width: 30%;
+    height: 40%;
+   }
+
+   .performance .recharts-wrapper{
+    width: 100% !important;
+    height: 86% !important;
+    }
+    .performance{
+        width: 30%;
+        height: 40%;
+    }
+
+    .score .recharts-wrapper{
+        width: 100% !important;
+        height: 86% !important;
+    }
+    .score{
+         width: 30%;
+        height: 40%;
+    }
+
+    .score svg{
+        width:100% ;
+        height: 100%;
+    }
+
+    .keyData {
+        margin-right: 6%;
+        height: 100%;
+        width: 38%;
+    }
+
+    .calories, .proteines, .gluicides, .lipides {
+        display: flex;
+        height: 63%;
+        align-items: center;
+        background-color: #FBFBFB;
+        margin-bottom: 57%;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .text{
+        font-size: 55%;
+    }
+    
+    
+}

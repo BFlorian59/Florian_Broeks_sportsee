@@ -3,7 +3,7 @@
  * @param {object} session - The session graph of the user.
  */
 
-import { AreaChart,  XAxis, Tooltip, Area} from 'recharts';
+import { LineChart,  XAxis, Tooltip, Line} from 'recharts';
 import PropTypes from 'prop-types';
 
 //display graphical session
@@ -24,7 +24,7 @@ function Session({session}) {
   return (
     <div className='session'>
       <p  className='titre'>Durée moyenne des sessions</p>
-      <AreaChart title="Chart of PU x UV"
+      <LineChart title="Chart of PU x UV"
         width={264}
         height={263}
         data={session}
@@ -32,8 +32,8 @@ function Session({session}) {
       >
         <XAxis dataKey="day" fill="#D8D8D8" stroke="#D8D8D8" />
         <Tooltip width= '23%' wrapperStyle={{backgroundColor:'white', color:"black", textAlign:'center', fontSize:'100%'}} content={<CustomTooltip />}/>
-        <Area type="monotone" fontFamily='200' dataKey="sessionLength" stroke="#D8D8D8" fill="#FF0000" />
-      </AreaChart>
+        <Line type="monotone" fontFamily='200' dataKey="sessionLength" stroke="#D8D8D8" fill="#FF0000" />
+      </LineChart>
     </div>
   );
 }

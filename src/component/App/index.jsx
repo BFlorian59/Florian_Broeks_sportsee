@@ -64,7 +64,7 @@ function App() {
                )}
 
                {Object.values(performance).map((perf) => 
-                  <Performance key={perf.userId} performance={perf.data} kind={perf.kind} />
+                  <Performance key={perf.userId} performance={perf.data} kind={[perf.kind]} />
                )}
 
                {Object.values(user).map((score) => 

@@ -7,10 +7,12 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 import '../../styles/activity.css'
 import PropTypes from 'prop-types';
-
+import {format, parseISO} from "date-fns";
 
 //display activity Performance of the user
 function Activity({activity}) {
+
+
 
   const CustomTooltip = ({payload}) => {
     if (payload && payload.length) {
@@ -35,7 +37,11 @@ function Activity({activity}) {
         barSize={10}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis/>
+        <XAxis dataKey="day" tickFormatter={(str) => {
+          const date = parseISO(str);
+            return format(date, 'd');
+          }}
+        />
         <YAxis orientation='right' />
         <Tooltip wrapperStyle={{left:'2%', backgroundColor:'#E60000', color:"white", textAlign:'center', fontSize:'60%', padding: '1% 1%'}} content={<CustomTooltip />}/>
         <Legend margin={{top:-37, right:-37, bottom:-37, left:-37}}  iconType='circle' iconSize='10' verticalAlign="top"  align="right"/>

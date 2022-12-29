@@ -1,4 +1,4 @@
-import ComponentDidMount  from '../../Service'
+import Service  from '../../Service'
 import '../../styles/activity.css'
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
@@ -22,25 +22,17 @@ function App() {
 
   useEffect(() => {
      
-   const service = new ComponentDidMount()
-   //const user = new ComponentDidMount()
-   //service.getuserID(userId)
+   const service = new Service()
       setUsers(service.getuserID(userId))
 
-      //const activity = new ComponentDidMount()
-      //service.getuserActivity(userId)
       setActivity(service.getuserActivity(userId))
 
-      //const sessions = new ComponentDidMount()
-      //service.getuserSession(userId)
       setSession(service.getuserSession(userId))
 
-      //const performance = new ComponentDidMount()
-      //service.getuserPerformance(userId)
       setPerformance(service.getuserPerformance(userId))
   }, [userId]);
 
-
+   //call component
    return user && activity && session && performance !== null?  (
       <div className="posts-container">
          {Object.values(user).map((users) => 
@@ -68,7 +60,7 @@ function App() {
                )}
 
                {Object.values(user).map((score) => 
-                  <Score key={score.id} score={score} />
+                   <Score key={score.id} score={score} />
                )}
             </div> 
         </div>  

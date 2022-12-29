@@ -26,11 +26,12 @@ import '../styles/activity.css'
 
 
 //get data
-export default class ComponentDidMount {
+export default class Service {
 
    constructor(){
-      this.env = true;
+      this.env = process.env.REACT_APP_TEST;
    }
+   
 
    getuserID(userId){
       if (this.env) {

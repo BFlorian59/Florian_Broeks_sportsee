@@ -7,10 +7,7 @@ import PropTypes from 'prop-types';
 
 //display user's firstname 
 
-function User({firstname}) {
-    const test = process.env.REACT_APP_TEST;
-    console.log(test)
-    
+function User({firstname}) {    
     return (
         <div>
             <div className="Userinfo">

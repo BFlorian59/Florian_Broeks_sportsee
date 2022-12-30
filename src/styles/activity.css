@@ -56,6 +56,14 @@
     padding-bottom: 45%;
 }
 
+.progress-score{
+    font-size: 187%;
+}
+
+.progress-label{
+    font-size: 100%;
+}
+
 @media screen and (max-width: 1240px) {
    .activity .recharts-surface{
         width: 100%;

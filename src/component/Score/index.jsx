@@ -12,12 +12,10 @@ import PropTypes from 'prop-types';
 function Score({score}) {
   let tabscore = null
   if(score.todayScore !== undefined){
-    tabscore = {tabscores:score.todayScore};
-    console.log(tabscore)
+    tabscore = {tabscores:score.todayScore}
   }
   else if(score.score !== undefined){
-    tabscore = {tabscores:score.score};
-    console.log(tabscore)
+    tabscore = {tabscores:score.score}
   }
   return (
     <div className='score'>
@@ -29,7 +27,9 @@ function Score({score}) {
           barSize={10}
           startAngle={90}
           endAngle={450}
-          
+          background = {{ fill: "#FFFFFF"  }}
+          barCategoryGap='200%'
+
         >
         <PolarAngleAxis
         
@@ -39,25 +39,45 @@ function Score({score}) {
           tick={false}
         />
         
-        <RadialBar
-          dataKey="tabscores"
+        <RadialBar dataKey="tabscores"
           background = {{ fill: "#FFFFFF"  }}
-          fill="#FF0101B2"
-        /> 
+          fill="#FF0101B2"/>
+          
+          
         <text
           x={125}
           y={100}
           textAnchor="middle"
           dominantBaseline="middle"
+          className="progress-score"
+          width={2}
+          fill='#282D30'
+        >
+          {tabscore.tabscores}%
+        </text>
+        <text
+          x={125}
+          y={130}
+          textAnchor="middle"
+          dominantBaseline="middle"
           className="progress-label"
           width={2}
-          data ={tabscore}
+          fill='#74798C'
         >
-          {tabscore.tabscores}
-          % de votre objectif
+          de votre
+        </text>
+
+        <text
+          x={125}
+          y={150}
+          textAnchor="middle"
+          dominantBaseline="middle"
+          className="progress-label"
+          width={2}
+          fill='#74798C'
+        > objectif
         </text>
       </RadialBarChart>
-      <p>{tabscore.scores}</p>
     </div>
             
   );

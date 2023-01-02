@@ -14,7 +14,7 @@ import Performance from '../Performance'
 function App() {
 
   const {userId} = useParams()
-  const [user, setUsers] = useState(null)
+  const [user, setuserInfo] = useState(null)
   const [activity, setActivity] = useState(null)
   const [session, setSession] = useState(null)
   const [performance, setPerformance] = useState(null)
@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
      
    const service = new Service()
-      setUsers(service.getuserID(userId))
+      setuserInfo(service.getuserInfo(userId))
 
       setActivity(service.getuserActivity(userId))
 
@@ -56,7 +56,21 @@ function App() {
                )}
 
                {Object.values(performance).map((perf) => 
-                  <Performance key={perf.userId} performance={perf.data} kind={[perf.kind]} />
+                  // console.log("tab perfkind", perf.kind);
+                  // for(let i =0;i<perf.data.length;i++){
+                  // //    console.log("mon indice ",perf.data[i].kind)
+                  // //    let indice = perf.data[i].kind
+                  // //    console.log("indice",indice)
+                  // //   console.log("dico",perf.kind)
+                  // //   console.log("dicowithindice",perf.kind[indice])
+                  // //    perf.data[i].kind = perf.kind[indice]
+                  // }
+                  // console.log("new tab",perf.data);
+                  // perf.data.forEach(element => {
+                  //    element.kind= perf.kind[element.kind];
+                  // });
+                  <Performance key={perf.userId} performance={perf.data} kind={perf.kind} /> 
+               
                )}
 
                {Object.values(user).map((score) => 

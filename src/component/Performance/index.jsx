@@ -8,8 +8,21 @@ import PropTypes from 'prop-types';
 
 //display graphical Performance of the user
 function Performance({performance, kind}) {
-  console.log({kind})
-  console.log({performance})
+  console.log("dicokind",kind)
+  console.log("perfo",performance)
+  console.log("test",performance[0].kind)
+  console.log("test2",kind[performance[0].kind])
+
+
+  const tab = [...performance];
+  console.log("nouveau tab",tab)
+  for(let i =0; i<performance.length;i++){
+  
+   
+    performance[i].kind= kind[tab[i].kind];
+  }
+ 
+
   return (
     <div className='performance'>
       <RadarChart
@@ -20,7 +33,7 @@ function Performance({performance, kind}) {
         text-align='center'
       >
         <PolarGrid />
-            <PolarAngleAxis dataKey="kind" data={kind} name={kind} key={kind} />
+        <PolarAngleAxis dataKey="kind" data={kind} name={kind} key={kind} />
         {/* kind[kind] */}
         <Radar
           dataKey="value"

@@ -1,12 +1,12 @@
 /**
 * Allows to connect to a database
 *
-* @param userId id of the user in url
-* @param activity array of the activity of the user
-* @param session array of the session of the user
-* @param performance array of the performance of the user
+* @param {object} userId id of the user in url
+* @return {info} array of infomations of the user
+* @return {activity} array of the activity of the user
+* @return {session} array of the session of the user
+* @return {performance} array of the performance of the user
 
-* @return data of the user
 * @author Florian
 * @version 1.0
 */
@@ -32,8 +32,10 @@ export default class Service {
       this.env = process.env.REACT_APP_TEST;
    }
    
+   
 
-   getuserID(userId){
+   getuserInfo(userId){
+      console.log(this.env);
       if (this.env) {
          if (userId == 18) {
             console.log(user)
@@ -46,9 +48,9 @@ export default class Service {
       }else{
          fetch(`http://localhost:3000/user/${userId}`)
          .then((response) => response.json())
-         .then((data) => {
-            console.log(data);
-            return data;
+         .then((info) => {
+            console.log(info);
+            return info;
          })
          .catch((err) => {
             console.log(err.message);

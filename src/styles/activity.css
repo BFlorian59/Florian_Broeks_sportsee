@@ -21,6 +21,7 @@
     width: 264px;
     height: 314px;
     margin-right: 3%;
+    border-radius: 5px;
 }
 .performance svg{
     width: 100%;
@@ -37,6 +38,7 @@
     margin-right: 3%;
     width: 264px;
     height: 314px;
+    border-radius: 5px;
 }
 
 .session .titre {
@@ -45,11 +47,13 @@
     width: 50%;
     margin-left: 20%;
     margin-bottom: 0%;
+    border-radius: 5px;
 }
 
 .score{
     background-color: #FBFBFB;
-    height:34%
+    height:34%;
+    border-radius: 5px;
 }
 
 .custom-tooltip-activity .poids{

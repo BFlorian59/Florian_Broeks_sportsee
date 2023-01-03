@@ -1,13 +1,26 @@
 /**
- * Represents a session of the User.
- * @param {object} session - The session graph of the user.
+ * Component User's session time.
+ * @component
+ * @param {object} session - Data User's session time.
  */
 
 import { LineChart,  XAxis, Tooltip, Line} from 'recharts';
 import PropTypes from 'prop-types';
+import {useState,useEffect} from 'react'
 
 //display graphical session
 function Session({session}) {
+  const jour={1:'L', 2:'M',3:'M',4:'J',5:'V', 6:'S', 7:'D',}
+  const [data,setData]= useState(session.data.sessions);
+  
+  useEffect(()=>{
+
+    let tab = [...data];
+    for(let i =0; i<data.length;i++){  
+      tab[i].valeur = jour[data[i].day];
+    }
+    setData(tab);
+  },[])
 
   const CustomTooltip = ({payload}) => {
     if (payload && payload.length) {
@@ -27,10 +40,10 @@ function Session({session}) {
       <LineChart title="Chart of PU x UV"
         width={264}
         height={263}
-        data={session}
+        data={data}
         background-color="#FF0000"
       >
-        <XAxis type='category' dataKey="day" fill="#D8D8D8" stroke="#D8D8D8" />
+        <XAxis type='category' dataKey="valeur" fill="#D8D8D8" stroke="#D8D8D8" />
         <Tooltip width= '23%' wrapperStyle={{backgroundColor:'white', color:"black", textAlign:'center', fontSize:'100%'}} content={<CustomTooltip />}/>
         <Line type="monotone" activeDot={{ stroke: '#FFFFFF33', strokeWidth: 12, r: 5 }} fontFamily='200' dataKey="sessionLength" dot={false} stroke="#D8D8D8" fill="#FF0000" />
       </LineChart>
@@ -40,6 +53,11 @@ function Session({session}) {
 
 Session.propTypes = {
   payload: PropTypes.number,
+
+  /**
+    * User's session time
+  */
+  session: PropTypes.object.isRequired
 }
 
 export default Session

@@ -8,6 +8,7 @@ import Activity from '../Activity'
 import Session from '../Sessions'
 import Score from '../Score'
 import Performance from '../Performance'
+import PropTypes from 'prop-types';
 
 
 //get data by user id
@@ -51,27 +52,11 @@ function App() {
                   <Activity key={activitys.userId} activity={activitys.sessions} />
                 )}
 
-               {Object.values(session).map((ses) => 
-                  <Session key={ses.userId} session={ses.sessions} />
-               )}
 
-               {Object.values(performance).map((perf) => 
-                  // console.log("tab perfkind", perf.kind);
-                  // for(let i =0;i<perf.data.length;i++){
-                  // //    console.log("mon indice ",perf.data[i].kind)
-                  // //    let indice = perf.data[i].kind
-                  // //    console.log("indice",indice)
-                  // //   console.log("dico",perf.kind)
-                  // //   console.log("dicowithindice",perf.kind[indice])
-                  // //    perf.data[i].kind = perf.kind[indice]
-                  // }
-                  // console.log("new tab",perf.data);
-                  // perf.data.forEach(element => {
-                  //    element.kind= perf.kind[element.kind];
-                  // });
-                  <Performance key={perf.userId} performance={perf.data} kind={perf.kind} /> 
+                  <Session key={session.userId} session={session} />
+
                
-               )}
+               <Performance performance={performance} />
 
                {Object.values(user).map((score) => 
                    <Score key={score.id} score={score} />

@@ -1,26 +1,27 @@
 /**
- * Represents a Performance of the User.
- * @param {array} performance - The Performance graph of the user.
+ * Component Performance of the User.
+ * @component
+ * @param {object} performance - Data Performance of the user.
+ * @returns {HTMLElement} - The performance graphic of the user
  */
 
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis} from 'recharts';
 import PropTypes from 'prop-types';
+import {useState,useEffect} from 'react'
 
 //display graphical Performance of the user
-function Performance({performance, kind}) {
-  console.log("dicokind",kind)
-  console.log("perfo",performance)
-  console.log("test",performance[0].kind)
-  console.log("test2",kind[performance[0].kind])
+function Performance({performance}) {
+  const [data,setData]= useState(performance.data.data);
+  const [kind,setKind]= useState(performance.data.kind);
 
+  useEffect(()=>{
 
-  const tab = [...performance];
-  console.log("nouveau tab",tab)
-  for(let i =0; i<performance.length;i++){
-  
-   
-    performance[i].kind= kind[tab[i].kind];
-  }
+    let tab = [...data];
+    for(let i =0; i<data.length;i++){  
+      tab[i].valeur = kind[data[i].kind];
+    }
+    setData(tab);
+  },[])
  
 
   return (
@@ -28,13 +29,12 @@ function Performance({performance, kind}) {
       <RadarChart
         width={278} 
         height={250}
-        cx={125}
-        data={performance}
+        cx={145}
+        data={data}
         text-align='center'
       >
         <PolarGrid />
-        <PolarAngleAxis dataKey="kind" data={kind} name={kind} key={kind} />
-        {/* kind[kind] */}
+        <PolarAngleAxis dataKey="valeur" data={kind} name={kind} key={kind} />
         <Radar
           dataKey="value"
           stroke="#FF0101B2"
@@ -48,6 +48,10 @@ function Performance({performance, kind}) {
 
 Performance.propTypes = {
   
+  /**
+   * User's performance
+   */
+  performance: PropTypes.object.isRequired
 }
 
 export default Performance

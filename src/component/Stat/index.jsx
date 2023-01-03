@@ -1,9 +1,18 @@
 /**
- * Represents a stat of the User.
+ * Component stat of the User.
+ * @component
  * @param {number} calorieCount - The count of the calorie of the user.
  * @param {number} carbohydrateCount - The count of the carbohydrate of the user.
- * @param {number} carbohydrateCount - The count of the lipid of the user.
- * @param {number} carbohydrateCount - The count of the protein of the user.
+ * @param {number} lipidCount - The count of the lipid of the user.
+ * @param {number} proteinCount - The count of the protein of the user.
+ * @example
+ * const calorieCount = 180
+ * const carbohydrateCount = 60
+ * const lipidCount = 24
+ * const proteinCount = 69
+ * return (
+ *   <Stat calorieCount={calorieCount} carbohydrateCount={carbohydrateCount} lipidCount={lipidCount} proteinCount={proteinCount} />
+ * )
  */
 
 import PropTypes from 'prop-types';
@@ -51,10 +60,25 @@ function Stat({calorieCount, carbohydrateCount, lipidCount, proteinCount}) {
 }
 
 Stat.propTypes = {
-    calorieCount: PropTypes.number,
-    carbohydrateCount: PropTypes.number,
-    lipidCount: PropTypes.number,
-    proteinCount: PropTypes.number,
+    /**
+     * User's calorie count
+    */
+    calorieCount: PropTypes.number.isRequired,
+
+    /**
+    * User's carbohydrate count
+   */
+    carbohydrateCount: PropTypes.number.isRequired,
+
+    /**
+    * User's lipid count
+   */
+    lipidCount: PropTypes.number.isRequired,
+
+    /**
+    * User's protein count
+   */
+    proteinCount: PropTypes.number.isRequired,
 }
 
 export default Stat

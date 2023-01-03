@@ -1,7 +1,10 @@
 /**
- * Represents a score of the User.
+ * Component a score of the User.
+ * @component
  * @param {object} score - The score graph of the users.
  * @param {object} tabscore - The score graph by user.
+ * @property {number}  tabscore.tabscores- The number of scores of the user.
+ * @returns {HTMLElement} - The performance graphic of the user
  */
 
 import { RadialBarChart, RadialBar, PolarAngleAxis} from 'recharts';
@@ -84,6 +87,9 @@ function Score({score}) {
 }
 
 Score.propTypes = {
-  score: PropTypes.object
+    /**
+   * User's score
+   */
+  score: PropTypes.object.isRequired
 }
 export default Score

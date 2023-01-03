@@ -1,6 +1,8 @@
 /**
- * Represents a Activity of the User.
- * @param {array} activity - The activity graph of the user.
+ * Component Activity of the User.
+ * @component
+ * @param {object} activity - The data activity of the user.
+ * @returns {HTMLElement} - The activity graphic of the user
  */
 
 
@@ -61,7 +63,11 @@ function Activity({activity}) {
 }
 Activity.propTypes = {
   payload: PropTypes.number,
-  activity: PropTypes.array,
+  
+    /**
+   * User's activity
+   */
+  activity: PropTypes.array.isRequired,
 }
 
 export default Activity

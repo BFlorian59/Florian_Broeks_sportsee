@@ -1,7 +1,7 @@
 /**
 * Allows to connect to a database
 *
-* @param {object} userId id of the user in url
+* @param {Number} userId id of the user in url
 * @return {info} array of infomations of the user
 * @return {activity} array of the activity of the user
 * @return {session} array of the session of the user

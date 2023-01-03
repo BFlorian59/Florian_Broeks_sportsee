@@ -1,6 +1,12 @@
 /**
- * Represents a User.
+ * Component firstname User.
+ * @component
  * @param {string} firstname - The firstname of the user.
+ * @example
+ * const firstname = Thomas
+ * return (
+ *   <User firstname={firstname} />
+ * )
  */
 
 import PropTypes from 'prop-types';
@@ -21,7 +27,10 @@ function User({firstname}) {
 }
 
 User.propTypes = {
-    firstname: PropTypes.string,
+    /**
+     * User's firstname
+    */
+    firstname: PropTypes.string.isRequired,
 }
 
 export default User

@@ -2,6 +2,7 @@
  * Component Activity of the User.
  * @component
  * @param {object} activity - The data activity of the user.
+ * @param {object} payload - The data of the activity's bar of the user.
  * @returns {HTMLElement} - The activity graphic of the user
  */
 
@@ -61,9 +62,7 @@ function Activity({activity}) {
     </div>
   );
 }
-Activity.propTypes = {
-  payload: PropTypes.number,
-  
+Activity.propTypes = { 
     /**
    * User's activity
    */

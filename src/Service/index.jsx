@@ -1,12 +1,5 @@
 /**
 * Allows to connect to a database
-*
-* @param {Number} userId id of the user in url
-* @return {info} array of infomations of the user
-* @return {activity} array of the activity of the user
-* @return {session} array of the session of the user
-* @return {performance} array of the performance of the user
-
 * @author Florian
 * @version 1.0
 */
@@ -28,12 +21,20 @@ import '../styles/activity.css'
 //get data
 export default class Service {
 
+     /**
+     * Call .env.
+     * @property {string} this.env - The .env value.
+     */
    constructor(){
       this.env = process.env.REACT_APP_TEST;
    }
    
    
-
+   /**
+   * Get user's information.
+   * @param {string} userId The users's id.
+   * @return {object} The of the data users.
+   */
    getuserInfo(userId){
       console.log(this.env);
       if (this.env) {
@@ -47,7 +48,11 @@ export default class Service {
          }
       }else{
          fetch(`http://localhost:3000/user/${userId}`)
-         .then((response) => response.json())
+         .then((response) => { if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Something went wrong');
+         })
          .then((info) => {
             console.log(info);
             return info;
@@ -58,7 +63,11 @@ export default class Service {
       }  
    }
 
-
+   /**
+   * Get user's activity.
+   * @param {string} userId The users's id.
+   * @return {object} Data of the users's activity.
+   */
    getuserActivity(userId){
 
       if (this.env) {
@@ -71,8 +80,12 @@ export default class Service {
             return user_12_activity
          }
       }else{
-         fetch(`http://localhost:3000//user/${userId}/activity`)
-         .then((response) => response.json())
+         fetch(`http://localhost:3000/user/${userId}/activity`)
+         .then((response) => { if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Something went wrong');
+         })
          .then((activity) => {
             console.log(activity);
             return activity;
@@ -83,6 +96,11 @@ export default class Service {
       }  
    }
 
+   /**
+   * Get user's session.
+   * @param {string} userId The users's id.
+   * @return {object} Data of the users's session of the week.
+   */
    getuserSession(userId){
 
       if (this.env) {
@@ -96,7 +114,11 @@ export default class Service {
          }
       }else{
          fetch(`http://localhost:3000/user/${userId}/average-sessions`)
-         .then((response) => response.json())
+         .then((response) => { if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Something went wrong');
+         })
          .then((session) => {
             console.log(session);
             return session;
@@ -107,7 +129,12 @@ export default class Service {
       }  
    }
 
-      getuserPerformance(userId){
+   /**
+   * Get user's performance.
+   * @param {string} userId The users's id.
+   * @return {object} Data of the users's performance.
+   */
+   getuserPerformance(userId){
 
       if (this.env) {
          if (userId == 18) {
@@ -120,7 +147,11 @@ export default class Service {
          }
       }else{
          fetch(`http://localhost:3000/user/${userId}/performance`)
-         .then((response) => response.json())
+         .then((response) => { if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Something went wrong');
+         })
          .then((performance) => {
             console.log(performance);
             return performance;

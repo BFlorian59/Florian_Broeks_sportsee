@@ -2,6 +2,8 @@
  * Component User's session time.
  * @component
  * @param {object} session - Data User's session time.
+ * @param {object} payload - The data of the session's dot of the user.
+ * @returns {HTMLElement} - The session graphic of the user
  */
 
 import { LineChart,  XAxis, Tooltip, Line} from 'recharts';
@@ -52,8 +54,6 @@ function Session({session}) {
 }
 
 Session.propTypes = {
-  payload: PropTypes.number,
-
   /**
     * User's session time
   */

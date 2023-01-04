@@ -2,6 +2,7 @@
  * Component firstname User.
  * @component
  * @param {string} firstname - The firstname of the user.
+ * @returns {HTMLElement} - The firstname of the user
  * @example
  * const firstname = Thomas
  * return (

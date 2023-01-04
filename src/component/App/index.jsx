@@ -10,6 +10,16 @@ import Score from '../Score'
 import Performance from '../Performance'
 import PropTypes from 'prop-types';
 
+/**
+ * Component App of the User.
+ * @component
+ * @param {object} users - Data recovery of User's firstname.
+ * @param {object} user - Data recovery of User's calorie counts, protein counts , carbohydrate counts and lipid counts.
+ * @param {object} activitys - Data recovery of User's activity.
+ * @param {object} score - Data recovery of User's score.
+ * @const {string} userId - Users' Id
+ * @returns {HTMLElement} - The activity graphic of the user
+ */
 
 //get data by user id
 function App() {
@@ -44,8 +54,7 @@ function App() {
          <div className='stat' >
             {Object.values(user).map((user) => 
                <Stat key={user.id} calorieCount={user.keyData.calorieCount} proteinCount={user.keyData.proteinCount}
-                  carbohydrateCount={user.keyData.carbohydrateCount}  lipidCount={user.keyData.lipidCount} />
-               
+                  carbohydrateCount={user.keyData.carbohydrateCount}  lipidCount={user.keyData.lipidCount} />              
             )}
             <div className='graph'>
                {Object.values(activity).map((activitys) => 
@@ -68,4 +77,51 @@ function App() {
    ):<></>
 }
 
+App.propTypes = { 
+   /**
+  * User's activity
+  */
+ activity: PropTypes.array,
+
+   /**
+   * User's performance
+   */
+   performance: PropTypes.object,
+
+       /**
+   * User's score
+   */
+   score: PropTypes.object,
+
+     /**
+    * User's session time
+  */
+  session: PropTypes.object,
+
+   /**
+     * User's calorie count
+    */
+   calorieCount: PropTypes.number,
+
+   /**
+   * User's carbohydrate count
+  */
+   carbohydrateCount: PropTypes.number,
+
+   /**
+   * User's lipid count
+  */
+   lipidCount: PropTypes.number,
+
+   /**
+   * User's protein count
+  */
+   proteinCount: PropTypes.number,
+
+   /**
+   * User's firstname
+   */
+   firstname: PropTypes.string
+
+}
 export default App

@@ -5,6 +5,7 @@
  * @param {number} carbohydrateCount - The count of the carbohydrate of the user.
  * @param {number} lipidCount - The count of the lipid of the user.
  * @param {number} proteinCount - The count of the protein of the user.
+ * @returns {HTMLElement} - The counts of the user
  * @example
  * const calorieCount = 180
  * const carbohydrateCount = 60

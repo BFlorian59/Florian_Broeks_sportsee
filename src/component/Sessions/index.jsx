@@ -40,12 +40,12 @@ function Session({session}) {
     <div className='session'>
       <p  className='titre'>Durée moyenne des sessions</p>
       <LineChart title="Chart of PU x UV"
-        width={264}
+        width={287}
         height={263}
         data={data}
         background-color="#FF0000"
       >
-        <XAxis type='category' dataKey="valeur" fill="#D8D8D8" stroke="#D8D8D8" />
+        <XAxis axisLine={false} type='category' dataKey="valeur" fill="#D8D8D8" stroke="#D8D8D8" />
         <Tooltip width= '23%' wrapperStyle={{backgroundColor:'white', color:"black", textAlign:'center', fontSize:'100%'}} content={<CustomTooltip />}/>
         <Line type="monotone" activeDot={{ stroke: '#FFFFFF33', strokeWidth: 12, r: 5 }} fontFamily='200' dataKey="sessionLength" dot={false} stroke="#D8D8D8" fill="#FF0000" />
       </LineChart>

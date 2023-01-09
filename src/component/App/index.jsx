@@ -41,7 +41,13 @@ function App() {
       setSession(service.getuserSession(userId))
 
       setPerformance(service.getuserPerformance(userId))
+      console.log(new Service().getuserActivity(userId))
   }, [userId]);
+
+  console.log(new Service())
+  console.log(activity)
+  console.log(session)
+  console.log(performance)
 
    //call component
    return user && activity && session && performance !== null?  (

@@ -1,4 +1,5 @@
 .activity{
+    width: 90%;
     margin-right: 5%;
     background-color: #FBFBFB;
     margin-bottom: -3%;
@@ -18,14 +19,15 @@
 
 .performance{
     background-color: #282D30;
-    width: 292px;
-    height: 314px;
+    width: 285px;
+    height: 34%;
     margin-right: 3%;
     border-radius: 5px;
 }
 .performance svg{
+    margin-top: 12%;
     width: 100%;
-    height: 130%;
+    height: 100%;
     font-size: 79%;
 }
 
@@ -37,8 +39,8 @@
 .session {
     background-color: #FF0000;
     margin-right: 3%;
-    width: 264px;
-    height: 314px;
+    width: 285px;
+    height: 34%;
     border-radius: 5px;
 }
 
@@ -53,12 +55,17 @@
 
 .score{
     background-color: #FBFBFB;
-    height:37.5%;
+    height:34%;
     border-radius: 5px;
+    width: 285px;
 }
 
 .custom-tooltip-activity .poids{
     padding-bottom: 45%;
+}
+
+.custom-tooltip-activity{
+    border-color: aliceblue;
 }
 
 .progress-score{

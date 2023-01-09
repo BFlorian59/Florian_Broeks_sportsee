@@ -46,7 +46,7 @@ function Activity({activity}) {
           }}
         />
         <YAxis orientation='right' />
-        <Tooltip wrapperStyle={{left:'2%', backgroundColor:'#E60000', color:"white", textAlign:'center', fontSize:'60%', padding: '1% 1%'}} content={<CustomTooltip />}/>
+        <Tooltip wrapperStyle={{borderRadius:'5px',left:'2%', backgroundColor:'#E60000', color:"white", textAlign:'center', fontSize:'60%', padding: '1% 1%'}} content={<CustomTooltip />}/>
         <Legend margin={{top:-37, right:-37, bottom:-37, left:-37}}  iconType='circle' iconSize='10' verticalAlign="top"  align="right"/>
         <Bar name="Poids (kg)" dataKey="kilogram" fill="#282D30" radius={[10, 10, 0, 0]}/>
         <Bar name="Calories brûlées (kCal)" dataKey="calories" fill="#E60000" radius={[10, 10, 0, 0]} />

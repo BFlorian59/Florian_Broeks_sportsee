@@ -46,7 +46,7 @@ function Session({session}) {
         background-color="#FF0000"
       >
         <XAxis axisLine={false} type='category' dataKey="valeur" fill="#D8D8D8" stroke="#D8D8D8" />
-        <Tooltip width= '23%' wrapperStyle={{backgroundColor:'white', color:"black", textAlign:'center', fontSize:'100%'}} content={<CustomTooltip />}/>
+        <Tooltip width= '23%' wrapperStyle={{borderRadius:'5px',backgroundColor:'white', color:"black", textAlign:'center', fontSize:'100%'}} content={<CustomTooltip />}/>
         <Line type="monotone" activeDot={{ stroke: '#FFFFFF33', strokeWidth: 12, r: 5 }} fontFamily='200' dataKey="sessionLength" dot={false} stroke="#D8D8D8" fill="#FF0000" />
       </LineChart>
     </div>

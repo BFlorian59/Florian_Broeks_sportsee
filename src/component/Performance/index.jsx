@@ -27,9 +27,9 @@ function Performance({performance}) {
   return (
     <div className='performance'>
       <RadarChart
-        width={277} 
-        height={237}
-        cx={145}
+        width={313} 
+        height={230}
+        cx={138}
         data={data}
         text-align='center'
       >

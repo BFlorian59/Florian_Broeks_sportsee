@@ -32,22 +32,23 @@ function App() {
 
 
   useEffect(() => {
-     
-   const service = new Service()
-      setuserInfo(service.getuserInfo(userId))
-
-      setActivity(service.getuserActivity(userId))
-
-      setSession(service.getuserSession(userId))
-
-      setPerformance(service.getuserPerformance(userId))
-      console.log(new Service().getuserActivity(userId))
+   const service = new Service();  
+   const fetchUserInfo = async ()=>{
+      const userInfo =  await service.getuserInfo(userId);
+      setuserInfo(userInfo)
+      const userActivity =  await service.getuserActivity(userId);
+      setActivity(userActivity)
+      const userSession = await service.getuserSession(userId)
+      setSession(userSession)  
+      const userPerformance = await service.getuserPerformance(userId)
+      setPerformance(userPerformance)
+      
+   }
+   fetchUserInfo();
   }, [userId]);
 
-  console.log(new Service())
-  console.log(activity)
-  console.log(session)
-  console.log(performance)
+  
+
 
    //call component
    return user && activity && session && performance !== null?  (

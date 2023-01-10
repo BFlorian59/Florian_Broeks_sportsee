@@ -27,6 +27,8 @@ export default class Service {
      */
    constructor(){
       this.env = process.env.REACT_APP_TEST;
+      console.log(process.env.REACT_APP_TEST)
+      this.element = document.querySelector('#root');
    }
    
    
@@ -35,9 +37,9 @@ export default class Service {
    * @param {string} userId The users's id.
    * @return {object} The of the data users.
    */
-   getuserInfo(userId){
-      console.log(this.env);
-      if (this.env) {
+    async getuserInfo(userId){
+     
+      if (this.env == "dev" ) {
          if (userId == 18) {
             console.log(user)
             return user
@@ -47,19 +49,17 @@ export default class Service {
             return user12
          }
       }else{
-         fetch(`http://localhost:3000/user/${userId}`)
-         .then((response) => { if (response.ok) {
-            return response.json();
-          }
-          throw new Error('Something went wrong');
-         })
-         .then((info) => {
-            console.log(info);
-            return info;
-         })
-         .catch((err) => {
-            console.log(err.message);
-         });
+     
+         try{
+         const url = await fetch(`http://localhost:3000/user/${userId}`);
+         const data = await url.json();
+         console.log(data)
+         return data;
+         }catch(err){
+            this.element.parentElement.innerHTML = `Error get InfoUser: ${err}`;
+            console.error('There was an error!', err);
+         }
+      
       }  
    }
 
@@ -68,9 +68,9 @@ export default class Service {
    * @param {string} userId The users's id.
    * @return {object} Data of the users's activity.
    */
-   getuserActivity(userId){
+   async getuserActivity(userId){
 
-      if (this.env) {
+      if (this.env == "dev") {
          if (userId == 18) {
             console.log(user_18_activity)
             return user_18_activity
@@ -80,19 +80,15 @@ export default class Service {
             return user_12_activity
          }
       }else{
-         fetch(`http://localhost:3000/user/${userId}/activity`)
-         .then((response) => { if (response.ok) {
-            return response.json();
-          }
-          throw new Error('Something went wrong');
-         })
-         .then((activity) => {
-            console.log(activity);
+         try{
+            const url = await fetch(`http://localhost:3000/user/${userId}/activity`);
+            const activity = await url.json();
+            console.log(activity)
             return activity;
-         })
-         .catch((err) => {
-            console.log(err.message);
-         });
+            }catch(err){
+               this.element.parentElement.innerHTML = `Error get activity: ${err}`;
+               console.error('There was an error!', err);
+            }
       }  
    }
 
@@ -101,9 +97,9 @@ export default class Service {
    * @param {string} userId The users's id.
    * @return {object} Data of the users's session of the week.
    */
-   getuserSession(userId){
+   async getuserSession(userId){
 
-      if (this.env) {
+      if (this.env == "dev") {
          if (userId == 18) {
             console.log(user_18_sessions)
             return user_18_sessions
@@ -113,19 +109,15 @@ export default class Service {
             return user_12_sessions
          }
       }else{
-         fetch(`http://localhost:3000/user/${userId}/average-sessions`)
-         .then((response) => { if (response.ok) {
-            return response.json();
-          }
-          throw new Error('Something went wrong');
-         })
-         .then((session) => {
-            console.log(session);
-            return session;
-         })
-         .catch((err) => {
-            console.log(err.message);
-         });
+         try{
+            const url = await fetch(`http://localhost:3000/user/${userId}/average-sessions`);
+            const sessions = await url.json();
+            console.log(sessions)
+            return sessions;
+            }catch(err){
+               this.element.parentElement.innerHTML = `Error get sessions: ${err}`;
+               console.error('There was an error!', err);
+            }
       }  
    }
 
@@ -134,9 +126,9 @@ export default class Service {
    * @param {string} userId The users's id.
    * @return {object} Data of the users's performance.
    */
-   getuserPerformance(userId){
-
-      if (this.env) {
+   async getuserPerformance(userId){
+     
+      if (this.env == "dev") {
          if (userId == 18) {
             console.log(user_18_performance)
             return user_18_performance
@@ -146,19 +138,15 @@ export default class Service {
             return user_12_performance
          }
       }else{
-         fetch(`http://localhost:3000/user/${userId}/performance`)
-         .then((response) => { if (response.ok) {
-            return response.json();
-          }
-          throw new Error('Something went wrong');
-         })
-         .then((performance) => {
-            console.log(performance);
+         try{
+            const url = await fetch(`http://localhost:3000/user/${userId}/performance`);
+            const performance = await url.json();
+            console.log(performance)
             return performance;
-         })
-         .catch((err) => {
-            console.log(err.message);
-         });
+            }catch(err){
+               this.element.parentElement.innerHTML = `Error get performance: ${err}`;
+               console.error('There was an error!', err);
+            }
       }  
    }
 }

@@ -27,9 +27,10 @@ SportSee, a startup dedicated to sports coaching. In full growth, the company wi
 - Css
 - Html
 - React
-- React Router
-- Recharts
-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- React Router (npm install react-router-dom to install React Router)
+- Recharts (npm install recharts to install recharts)
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+- PropTypes (npm install --save prop-types to install PropTypes) 
 
 ## Contribute to the project
 

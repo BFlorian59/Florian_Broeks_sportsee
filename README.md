@@ -7,7 +7,9 @@
 
 ## Install Back-End
 
-Regarding the data, I created a backend using NodeJS that you can find [here](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard). It will allow you to make your HTTP calls and retrieve sample data. Everything is described there: the installation steps as well as the HTTP calls that I have put in place.
+If env = 'prod' then regarding data, the NodeJS backend you can find [here](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard). It will allow you to make your HTTP calls and retrieve sample data. Everything is described there: the installation steps as well as the HTTP calls that I put in place.
+
+If env = 'dev' then regarding data, she is mocked in the application so no need to start the API.
 
 In the project directory, you can run:
 

@@ -23,6 +23,7 @@ function Performance({performance}) {
     setData(tab);
   },[])
  
+  console.log(data)
 
   return (
     <div className='performance'>

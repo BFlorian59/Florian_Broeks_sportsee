@@ -50,14 +50,6 @@ function Activity({activity}) {
         <Legend margin={{top:-37, right:-37, bottom:-37, left:-37}}  iconType='circle' iconSize='10' verticalAlign="top"  align="right"/>
         <Bar name="Poids (kg)" dataKey="kilogram" fill="#282D30" radius={[10, 10, 0, 0]}/>
         <Bar name="Calories brûlées (kCal)" dataKey="calories" fill="#E60000" radius={[10, 10, 0, 0]} />
-        <text
-          x={75}
-          y={10}
-          textAnchor="middle"
-          dominantBaseline="middle"
-          className="progress-label"
-        >
-        </text>
       </BarChart>
     </div>
   );

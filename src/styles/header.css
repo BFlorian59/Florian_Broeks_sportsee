@@ -33,4 +33,8 @@ nav{
         height: 100%;
         margin: auto;
     }
+
+    .Header {
+        font-size: 175%;
+    }
 }

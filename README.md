@@ -7,7 +7,9 @@
 
 ## Install Back-End
 
-Regarding the data, I created a backend using NodeJS that you can find [here](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard). It will allow you to make your HTTP calls and retrieve sample data. Everything is described there: the installation steps as well as the HTTP calls that I have put in place.
+Then regarding data, the NodeJS backend you can find [here](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard). It will allow you to make your HTTP calls and retrieve sample data. Everything is described there: the installation steps as well as the HTTP calls that I put in place.
+
+If env = 'dev' then regarding data, she is mocked in the application so no need to start the API.
 
 In the project directory, you can run:
 
@@ -25,9 +27,10 @@ SportSee, a startup dedicated to sports coaching. In full growth, the company wi
 - Css
 - Html
 - React
-- React Router
-- Recharts
-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- React Router (npm install react-router-dom to install React Router)
+- Recharts (npm install recharts to install recharts)
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+- PropTypes (npm install --save prop-types to install PropTypes) 
 
 ## Contribute to the project
 
